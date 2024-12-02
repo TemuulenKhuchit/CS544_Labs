@@ -1,7 +1,8 @@
 package edu.miu.cs.cs544.temuulen.labs.lab3.entity;
 
 import jakarta.persistence.*;
-import java.util.Date;
+
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -14,12 +15,11 @@ public class DistanceEducation extends Course{
     @ElementCollection
     @CollectionTable(name = "DE_WEBINAR_SESSION_DATES", joinColumns = @JoinColumn(name = "COURSE_ID"))
     @Column(name = "SESSION_DATE")
-    @Temporal(TemporalType.DATE)
-    private List<Date> webinarSessionDates;
+    private List<LocalDate> webinarSessionDates;
 
     public DistanceEducation() {}
 
-    public DistanceEducation(String title, Date startDate, String professorName, String examProfessor, List<Date> webinarSessionDates) {
+    public DistanceEducation(String title, LocalDate startDate, String professorName, String examProfessor, List<LocalDate> webinarSessionDates) {
         super(title, startDate, professorName);
         this.examProfessor = examProfessor;
         this.webinarSessionDates = webinarSessionDates;
@@ -33,11 +33,11 @@ public class DistanceEducation extends Course{
         this.examProfessor = examProfessor;
     }
 
-    public List<Date> getWebinarSessionDates() {
+    public List<LocalDate> getWebinarSessionDates() {
         return webinarSessionDates;
     }
 
-    public void setWebinarSessionDates(List<Date> webinarSessionDates) {
+    public void setWebinarSessionDates(List<LocalDate> webinarSessionDates) {
         this.webinarSessionDates = webinarSessionDates;
     }
 }

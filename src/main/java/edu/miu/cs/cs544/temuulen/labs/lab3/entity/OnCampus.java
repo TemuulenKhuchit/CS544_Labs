@@ -2,7 +2,7 @@ package edu.miu.cs.cs544.temuulen.labs.lab3.entity;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @DiscriminatorValue("OnCampus")
@@ -13,7 +13,7 @@ public class OnCampus extends Course{
 
     protected OnCampus() {}
 
-    public OnCampus(String title, Date startDate, String professorName, String room, int capacity) {
+    public OnCampus(String title, LocalDate startDate, String professorName, String room, int capacity) {
         super(title, startDate, professorName);
         this.room = room;
         this.capacity = capacity;

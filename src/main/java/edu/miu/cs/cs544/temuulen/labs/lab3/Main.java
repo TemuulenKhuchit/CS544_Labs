@@ -11,8 +11,8 @@ import jakarta.persistence.Persistence;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.*;
 
+import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 public class Main {
@@ -26,16 +26,16 @@ public class Main {
             em.getTransaction().begin();
 
             // Creating courses
-            OnCampus course1 = new OnCampus("Enterprise Architecture", new Date(), "Najeeb Najeeb", "101", 40);
-            OnCampus course2 = new OnCampus("Algorithms", new Date(), "Premchand Nair", "102", 25);
-            DistanceEducation course3 = new DistanceEducation("Cloud Computing", new Date(), "Unubold Tumurbaatar", "Najeeb", Arrays.asList(new Date(), new Date()));
-            DistanceEducation course4 = new DistanceEducation("MWA", new Date(), "Asaad Saad", "Sarah Sarah", Arrays.asList(new Date(), new Date()));
-            OnCampus course5 = new OnCampus("FPP", new Date(), "Clark Clark", "Room 103", 35);
-            OnCampus course6 = new OnCampus("MPP", new Date(), "Davis Davis", "Room 104", 30);
-            DistanceEducation course7 = new DistanceEducation("STC-2", new Date(), "Evans Evans", "Najeeb", Arrays.asList(new Date(), new Date()));
-            DistanceEducation course8 = new DistanceEducation("WAP", new Date(), "Fox Fox", "Najeeb", Arrays.asList(new Date(), new Date()));
-            OnCampus course9 = new OnCampus("STC", new Date(), "Harris Harris", "Room 105", 20);
-            OnCampus course10 = new OnCampus("Career Strategy", new Date(), "Bat Bat", "Room 106", 40);
+            OnCampus course1 = new OnCampus("Enterprise Architecture", LocalDate.of(2024, 1, 1), "Najeeb Najeeb", "101", 40);
+            OnCampus course2 = new OnCampus("Algorithms", LocalDate.of(2024, 2, 1), "Premchand Nair", "102", 25);
+            DistanceEducation course3 = new DistanceEducation("Cloud Computing", LocalDate.of(2024, 3, 1), "Unubold Tumurbaatar", "Najeeb", Arrays.asList(LocalDate.of(2024, 3, 2), LocalDate.of(2024, 3, 3)));
+            DistanceEducation course4 = new DistanceEducation("MWA", LocalDate.of(2024, 4, 1), "Asaad Saad", "Sarah Sarah", Arrays.asList(LocalDate.of(2024, 4, 2), LocalDate.of(2024, 4, 3)));
+            OnCampus course5 = new OnCampus("FPP", LocalDate.of(2024, 5, 1), "Clark Clark", "Room 103", 35);
+            OnCampus course6 = new OnCampus("MPP", LocalDate.of(2024, 6, 1), "Davis Davis", "Room 104", 30);
+            DistanceEducation course7 = new DistanceEducation("STC-2", LocalDate.of(2024, 7, 1), "Evans Evans", "Najeeb", Arrays.asList(LocalDate.of(2024, 7, 2), LocalDate.of(2024, 7, 3)));
+            DistanceEducation course8 = new DistanceEducation("WAP", LocalDate.of(2024, 8, 1), "Fox Fox", "Najeeb", Arrays.asList(LocalDate.of(2024, 8, 2), LocalDate.of(2024, 8, 3)));
+            OnCampus course9 = new OnCampus("STC", LocalDate.of(2024, 9, 1), "Harris Harris", "Room 105", 20);
+            OnCampus course10 = new OnCampus("Career Strategy", LocalDate.of(2024, 10, 1), "Bat Bat", "Room 106", 40);
 
             Arrays.asList(course1, course2, course3, course4, course5, course6, course7, course8, course9, course10)
                     .forEach(em::persist);
@@ -57,7 +57,7 @@ public class Main {
             student4.setCourseAttending(null);
             student4.setCoursesAttended(Arrays.asList(course1, course2, course3, course4, course5, course6, course7, course8, course9));
 
-            Student student5 = new Student("Nomin", 2.8f);
+            Student student5 = new Student("Nomin", 3.6f);
             student5.setCourseAttending(course1);
             student5.setCoursesAttended(Arrays.asList(course1, course2, course3, course4, course5, course6, course7, course8, course9));
 

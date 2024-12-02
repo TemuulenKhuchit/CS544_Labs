@@ -33,6 +33,9 @@ public class Student {
     )
     private List<Course> coursesAttended;
 
+    @Version
+    private int version;
+
     protected Student() {
     }
 

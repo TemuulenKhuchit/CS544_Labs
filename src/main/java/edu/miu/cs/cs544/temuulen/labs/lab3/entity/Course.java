@@ -2,7 +2,7 @@ package edu.miu.cs.cs544.temuulen.labs.lab3.entity;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -15,16 +15,15 @@ public abstract class Course {
 
     private String title;
 
-    @Temporal(TemporalType.DATE)
     @Column(name = "START_DATE")
-    private Date startDate;
+    private LocalDate startDate;
 
     @Column(name = "PROFESSOR_NAME")
     private String professorName;
 
     protected Course(){}
 
-    public Course(String title, Date startDate, String professorName) {
+    public Course(String title, LocalDate startDate, String professorName) {
         this.title = title;
         this.startDate = startDate;
         this.professorName = professorName;
@@ -42,11 +41,11 @@ public abstract class Course {
         this.title = title;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
