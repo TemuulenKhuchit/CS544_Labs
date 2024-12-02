@@ -56,4 +56,14 @@ public abstract class Course {
     public void setProfessorName(String professorName) {
         this.professorName = professorName;
     }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", startDate=" + startDate +
+                ", professorName='" + professorName + '\'' +
+                '}';
+    }
 }

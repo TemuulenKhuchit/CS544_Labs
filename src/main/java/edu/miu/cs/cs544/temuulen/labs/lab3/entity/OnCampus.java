@@ -34,4 +34,12 @@ public class OnCampus extends Course{
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
+
+    @Override
+    public String toString() {
+        return "OnCampus{" +
+                "room='" + room + '\'' +
+                ", capacity=" + capacity +
+                "} " + super.toString();
+    }
 }

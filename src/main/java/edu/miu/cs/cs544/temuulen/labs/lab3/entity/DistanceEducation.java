@@ -40,4 +40,12 @@ public class DistanceEducation extends Course{
     public void setWebinarSessionDates(List<LocalDate> webinarSessionDates) {
         this.webinarSessionDates = webinarSessionDates;
     }
+
+    @Override
+    public String toString() {
+        return "DistanceEducation{" +
+                "examProfessor='" + examProfessor + '\'' +
+                ", webinarSessionDates=" + webinarSessionDates +
+                "} " + super.toString();
+    }
 }

@@ -79,4 +79,16 @@ public class Student {
     public void setCoursesAttended(List<Course> coursesAttended) {
         this.coursesAttended = coursesAttended;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", gpa=" + gpa +
+                ", courseAttending=" + courseAttending +
+                ", coursesAttended=" + coursesAttended +
+                ", version=" + version +
+                '}';
+    }
 }
