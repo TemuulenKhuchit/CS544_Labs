@@ -3,7 +3,21 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd"
              version="3.2">
-    <persistence-unit name="default">
+    <persistence-unit name="MyPU">
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/cs544db"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="Temuulen123$"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+
+<!--            <property name="eclipselink.logging.level" value="FINE"/>-->
+        </properties>
+
+        <class>edu.miu.cs.cs544.temuulen.labs.lab3.entity.Student</class>
+        <class>edu.miu.cs.cs544.temuulen.labs.lab3.entity.Course</class>
+        <class>edu.miu.cs.cs544.temuulen.labs.lab3.entity.OnCampus</class>
+        <class>edu.miu.cs.cs544.temuulen.labs.lab3.entity.DistanceEducation</class>
 
     </persistence-unit>
 </persistence>
