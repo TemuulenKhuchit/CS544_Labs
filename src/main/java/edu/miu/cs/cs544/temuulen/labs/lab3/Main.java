@@ -45,19 +45,19 @@ public class Main {
             student1.setCourseAttending(null);
             student1.setCoursesAttended(Arrays.asList(course2, course3, course4, course5, course6, course7, course8, course9, course10));
 
-            Student student2 = new Student("Odko", 2.6f);
+            Student student2 = new Student("Odko", 2.9f);
             student2.setCourseAttending(course3);
             student2.setCoursesAttended(Arrays.asList(course1, course2));
 
-            Student student3 = new Student("Luka", 2.2f);
+            Student student3 = new Student("Luka", 2.7f);
             student3.setCourseAttending(null);
             student3.setCoursesAttended(Arrays.asList(course1, course2, course3, course4));
 
-            Student student4 = new Student("Sukhbat", 3.2f);
+            Student student4 = new Student("Sukhbat", 3.1f);
             student4.setCourseAttending(null);
             student4.setCoursesAttended(Arrays.asList(course1, course2, course3, course4, course5, course6, course7, course8, course9));
 
-            Student student5 = new Student("Nomin", 3.6f);
+            Student student5 = new Student("Nomin", 2.8f);
             student5.setCourseAttending(course1);
             student5.setCoursesAttended(Arrays.asList(course1, course2, course3, course4, course5, course6, course7, course8, course9));
 
