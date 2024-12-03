@@ -125,7 +125,7 @@ public class Main {
 
     public static void testOptimisticLocking(EntityManagerFactory emf, int studentId) {
         System.out.println("\n--- Testing Optimistic Locking ---");
-        // Thread A
+
         Runnable taskA = () -> {
             EntityManager em = emf.createEntityManager();
             EntityTransaction tx = em.getTransaction();
@@ -135,7 +135,6 @@ public class Main {
                 Student student = em.find(Student.class, studentId);
                 System.out.println("Thread A: Current GPA: " + student.getGpa());
                 student.setGpa(student.getGpa() + 0.1f);
-                // Simulate some processing time
                 Thread.sleep(1000);
                 em.merge(student);
                 tx.commit();
@@ -148,7 +147,6 @@ public class Main {
             }
         };
 
-        // Thread B
         Runnable taskB = () -> {
             EntityManager em = emf.createEntityManager();
             EntityTransaction tx = em.getTransaction();
@@ -158,7 +156,6 @@ public class Main {
                 Student student = em.find(Student.class, studentId);
                 System.out.println("Thread B: Current GPA: " + student.getGpa());
                 student.setGpa(student.getGpa() + 0.2f);
-                // Simulate some processing time
                 Thread.sleep(2000);
                 em.merge(student);
                 tx.commit();
@@ -190,7 +187,7 @@ public class Main {
 
     public static void testPessimisticLocking(EntityManagerFactory emf) {
         System.out.println("\n--- Testing Pessimistic Locking ---");
-        // Thread C
+
         Runnable taskC = () -> {
             EntityManager em = emf.createEntityManager();
             try {
@@ -200,7 +197,6 @@ public class Main {
                 query.setLockMode(LockModeType.PESSIMISTIC_WRITE);
                 List<Student> students = query.getResultList();
                 System.out.println("Thread C: Retrieved " + students.size() + " students");
-                // Simulate processing time
                 Thread.sleep(3000);
                 em.getTransaction().commit();
                 System.out.println("Thread C: Transaction committed");
@@ -212,11 +208,9 @@ public class Main {
             }
         };
 
-        // Thread D
         Runnable taskD = () -> {
             EntityManager em = emf.createEntityManager();
             try {
-                // Delay to ensure Thread C locks first
                 Thread.sleep(500);
                 em.getTransaction().begin();
                 System.out.println("Thread D: Executing named query with pessimistic lock");
@@ -250,7 +244,6 @@ public class Main {
 
     public static void testCaching(EntityManagerFactory emf, int courseId) {
         System.out.println("\n--- Testing Caching Behavior ---");
-        // Accessing OnCampus course multiple times
         EntityManager em = emf.createEntityManager();
         try {
             System.out.println("Accessing OnCampus Course multiple times to test caching:");
@@ -266,7 +259,6 @@ public class Main {
             em.close();
         }
 
-        // Accessing DistanceEducation course multiple times
         em = emf.createEntityManager();
         try {
             System.out.println("\nAccessing DistanceEducation Course multiple times to test caching:");
