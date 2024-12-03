@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
+@Cacheable
 @NamedQuery(
         name = "Student.CanGraduate",
         query = "SELECT s " +

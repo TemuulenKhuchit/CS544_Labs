@@ -1,10 +1,12 @@
 package edu.miu.cs.cs544.temuulen.labs.lab3.entity;
 
+import jakarta.persistence.Cacheable;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import java.time.LocalDate;
 
 @Entity
+@Cacheable
 @DiscriminatorValue("OnCampus")
 public class OnCampus extends Course{
 

@@ -1,10 +1,10 @@
 package edu.miu.cs.cs544.temuulen.labs.lab3.entity;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
 
 @Entity
+@Cacheable
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "COURSE_TYPE", discriminatorType = DiscriminatorType.STRING)
 public abstract class Course {

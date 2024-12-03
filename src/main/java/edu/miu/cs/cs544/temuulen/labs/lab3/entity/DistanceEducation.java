@@ -1,11 +1,11 @@
 package edu.miu.cs.cs544.temuulen.labs.lab3.entity;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity
+@Cacheable(false)
 @DiscriminatorValue("DistanceEducation")
 public class DistanceEducation extends Course{
 
