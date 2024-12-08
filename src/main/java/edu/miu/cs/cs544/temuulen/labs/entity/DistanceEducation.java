@@ -1,13 +1,14 @@
-package edu.miu.cs.cs544.temuulen.labs.lab3.entity;
+package edu.miu.cs.cs544.temuulen.labs.entity;
 
 import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity
 @Cacheable(false)
 @DiscriminatorValue("DistanceEducation")
-public class DistanceEducation extends Course{
+public class DistanceEducation extends Course {
 
     @Column(name = "EXAM_PROFESSOR")
     private String examProfessor;
@@ -43,9 +44,6 @@ public class DistanceEducation extends Course{
 
     @Override
     public String toString() {
-        return "DistanceEducation{" +
-                "examProfessor='" + examProfessor + '\'' +
-                ", webinarSessionDates=" + webinarSessionDates +
-                "} " + super.toString();
+        return "DistanceEducation{" + "examProfessor='" + examProfessor + '\'' + ", webinarSessionDates=" + webinarSessionDates + "} " + super.toString();
     }
 }

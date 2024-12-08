@@ -1,14 +1,15 @@
-package edu.miu.cs.cs544.temuulen.labs.lab3.entity;
+package edu.miu.cs.cs544.temuulen.labs.entity;
 
 import jakarta.persistence.Cacheable;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
+
 import java.time.LocalDate;
 
 @Entity
 @Cacheable
 @DiscriminatorValue("OnCampus")
-public class OnCampus extends Course{
+public class OnCampus extends Course {
 
     private String room;
     private int capacity;
@@ -39,9 +40,6 @@ public class OnCampus extends Course{
 
     @Override
     public String toString() {
-        return "OnCampus{" +
-                "room='" + room + '\'' +
-                ", capacity=" + capacity +
-                "} " + super.toString();
+        return "OnCampus{" + "room='" + room + '\'' + ", capacity=" + capacity + "} " + super.toString();
     }
 }

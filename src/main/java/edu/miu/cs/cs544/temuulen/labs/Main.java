@@ -1,9 +1,9 @@
-package edu.miu.cs.cs544.temuulen.labs.lab3;
+package edu.miu.cs.cs544.temuulen.labs;
 
-import edu.miu.cs.cs544.temuulen.labs.lab3.entity.Course;
-import edu.miu.cs.cs544.temuulen.labs.lab3.entity.DistanceEducation;
-import edu.miu.cs.cs544.temuulen.labs.lab3.entity.OnCampus;
-import edu.miu.cs.cs544.temuulen.labs.lab3.entity.Student;
+import edu.miu.cs.cs544.temuulen.labs.entity.Course;
+import edu.miu.cs.cs544.temuulen.labs.entity.DistanceEducation;
+import edu.miu.cs.cs544.temuulen.labs.entity.OnCampus;
+import edu.miu.cs.cs544.temuulen.labs.entity.Student;
 
 import jakarta.persistence.*;
 import jakarta.persistence.criteria.*;
@@ -48,8 +48,7 @@ public class Main {
         OnCampus course9 = new OnCampus("STC", LocalDate.of(2024, 9, 1), "Harris Harris", "Room 105", 20);
         OnCampus course10 = new OnCampus("Career Strategy", LocalDate.of(2024, 10, 1), "Bat Bat", "Room 106", 40);
 
-        Arrays.asList(course1, course2, course3, course4, course5, course6, course7, course8, course9, course10)
-                .forEach(em::persist);
+        Arrays.asList(course1, course2, course3, course4, course5, course6, course7, course8, course9, course10).forEach(em::persist);
 
         // Creating students
         Student student1 = new Student("Temuulen", 3.8f);

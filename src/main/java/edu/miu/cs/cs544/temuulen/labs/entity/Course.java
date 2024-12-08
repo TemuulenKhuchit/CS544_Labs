@@ -1,6 +1,7 @@
-package edu.miu.cs.cs544.temuulen.labs.lab3.entity;
+package edu.miu.cs.cs544.temuulen.labs.entity;
 
 import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
 @Entity
@@ -21,7 +22,7 @@ public abstract class Course {
     @Column(name = "PROFESSOR_NAME")
     private String professorName;
 
-    protected Course(){}
+    protected Course() {}
 
     public Course(String title, LocalDate startDate, String professorName) {
         this.title = title;
@@ -59,11 +60,6 @@ public abstract class Course {
 
     @Override
     public String toString() {
-        return "Course{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", startDate=" + startDate +
-                ", professorName='" + professorName + '\'' +
-                '}';
+        return "Course{" + "id=" + id + ", title='" + title + '\'' + ", startDate=" + startDate + ", professorName='" + professorName + '\'' + '}';
     }
 }

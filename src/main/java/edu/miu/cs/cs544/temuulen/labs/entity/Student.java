@@ -1,4 +1,4 @@
-package edu.miu.cs.cs544.temuulen.labs.lab3.entity;
+package edu.miu.cs.cs544.temuulen.labs.entity;
 
 import jakarta.persistence.*;
 import java.util.List;
